@@ -1,6 +1,7 @@
 # Imports
 import numpy as np
 
+
 # Model methods
 def compute_mse(e):
     """Calculate the mse for vector e.
@@ -14,6 +15,7 @@ def compute_mse(e):
     0.625
     """
     return 1 / 2 * np.mean(e**2)
+
 
 def compute_loss(y, tx, w):
     """Calculate the mse loss.
@@ -31,6 +33,7 @@ def compute_loss(y, tx, w):
     """
     e = y - tx.dot(w)
     return compute_mse(e)
+
 
 def least_squares(y, tx):
     """Calculate the least squares solution.
