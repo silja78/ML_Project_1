@@ -1,7 +1,6 @@
 # Model methods
 
 
-
 def batch_iter(y, tx, batch_size, num_batches=1, shuffle=True):
     """
     Generate a minibatch iterator for a dataset.
@@ -61,6 +60,7 @@ def batch_iter(y, tx, batch_size, num_batches=1, shuffle=True):
         )  # The first data point of the following batch
         yield y[start_index:end_index], tx[start_index:end_index]
 
+
 def compute_stoch_gradient(y, tx, w):
     """Compute a stochastic gradient at w from a data sample batch of size B, where B < N, and their corresponding labels.
 
@@ -102,21 +102,19 @@ def mean_squared_error_sgd(y, tx, initial_w, max_iters, gamma):
 
     for n_iter in range(max_iters):
         ### SOLUTION
-        for y_batch, tx_batch in batch_iter(
-            y, tx, batch_size=1, num_batches=1
-        ):
+        for y_batch, tx_batch in batch_iter(y, tx, batch_size=1, num_batches=1):
             # compute a stochastic gradient and loss
             grad, _ = compute_stoch_gradient(y_batch, tx_batch, w)
             # update w through the stochastic gradient update
             w = w - gamma * grad
-            
-            
 
     w_last = w
     loss_last = compute_loss(y, tx, w_last)
     return w_last, loss_last
 
-#Ridge regression
+
+# Ridge regression
+
 
 def ridge_regression(y, tx, lambda_):
     """implement ridge regression.
@@ -136,9 +134,9 @@ def ridge_regression(y, tx, lambda_):
     """
     D = tx.shape[1]
     N = tx.shape[0]
-    
-    A = np.dot(tx.T,tx)+ (lambda_ * np.identity(D)) * 2 * N
-    b = np.dot(tx.T,y)
-    w = np.linalg.solve(A,b)
+
+    A = np.dot(tx.T, tx) + (lambda_ * np.identity(D)) * 2 * N
+    b = np.dot(tx.T, y)
+    w = np.linalg.solve(A, b)
     loss = compute_loss(y, tx, w)
-    return w , loss
+    return w, loss
