@@ -1,11 +1,11 @@
 # Model methods
 
-#Mean_square_error_gd
+# Mean_square_error_gd
 import numpy as np
 
 
 def compute_mse_loss(y, tx, w):
-    
+
     e = y - tx.dot(w)
     return 1 / 2 * np.mean(e**2)
 
