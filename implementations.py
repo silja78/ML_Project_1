@@ -1,16 +1,11 @@
 # Model methods
 
-<<<<<<< Updated upstream
 # Mean_square_error_gd
-=======
->>>>>>> Stashed changes
 import numpy as np
 
 
 def compute_mse_loss(y, tx, w):
-<<<<<<< Updated upstream
 
-=======
     """Compute the mean squared error loss (with the 1/2 factor).
 
     Args:
@@ -21,14 +16,12 @@ def compute_mse_loss(y, tx, w):
     Returns:
         loss: float, the value 1/(2N) * sum((y - tx @ w)^2).
     """
->>>>>>> Stashed changes
     e = y - tx.dot(w)
     return 1 / 2 * np.mean(e**2)
 
 
 def compute_mse_gradient(y, tx, w):
-<<<<<<< Updated upstream
-=======
+
     """Compute the gradient of the MSE loss.
 
     Args:
@@ -39,13 +32,11 @@ def compute_mse_gradient(y, tx, w):
     Returns:
         grad: numpy array of shape (D,), the gradient -1/N * tx.T @ (y - tx @ w).
     """
->>>>>>> Stashed changes
     e = y - tx.dot(w)
     return -tx.T.dot(e) / len(y)
 
 
 def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
-<<<<<<< Updated upstream
     w = initial_w
     for n_iter in range(max_iters):
         grad = compute_mse_gradient(y, tx, w)
@@ -53,7 +44,6 @@ def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
     # loss calculée avec le w final
     loss = compute_mse_loss(y, tx, w)
     return w, loss
-=======
     """Linear regression using gradient descent on the MSE loss.
 
     Args:
@@ -147,4 +137,3 @@ def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
     # Loss at the final w, without the penalty term
     loss = calculate_logistic_loss(y, tx, w)
     return w, loss
->>>>>>> Stashed changes
