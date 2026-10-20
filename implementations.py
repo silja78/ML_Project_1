@@ -46,6 +46,7 @@ def compute_stoch_gradient(y, tx, w):
 
     Returns:
         A numpy array of shape (2, ) (same shape as w), containing the stochastic gradient of the loss at w.
+        err, a scalar corresponding to the error
     """
 
     err = y - tx.dot(w)
@@ -77,7 +78,7 @@ def mean_squared_error_sgd(y, tx, initial_w, max_iters, gamma):
     N = len(y)
     print(N)
 
-    # calcul le nombre de fois où l'on "passe" dans le dataset
+    # compute how many time we go through the dataset
     tour = int(max_iters / N)
 
     for n_tour in range(tour):
