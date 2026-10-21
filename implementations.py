@@ -1,11 +1,6 @@
 # Imports
 import numpy as np
 
-
-# Imports
-import numpy as np
-
-
 # Model methods
 
 
@@ -53,7 +48,6 @@ def least_squares(y, tx):
     w = np.linalg.solve(a, b)
     loss = compute_loss(y, tx, w)
     return w, loss
-
 
 
 # Logistic Regression implementation
