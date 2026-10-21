@@ -83,7 +83,7 @@ def calculate_gradient_negative_log_likelihood(y, tx, w):
 # Least squares implementation
 def least_squares(y, tx):
     """Calculate the least squares solution.
-       returns mse, and optimal weights.
+       returns optimal weights and mse.
 
     Args:
         y: numpy array of shape (N,), N is the number of samples.
@@ -101,7 +101,7 @@ def least_squares(y, tx):
 
 
 # Logistic Regression implementation
-def logistic_regression(y, tx, initial_w, max_iter, gamma):
+def logistic_regression(y, tx, initial_w, max_iters, gamma):
     """
     Do max_iter steps of gradient descent using logistic regression. Return the loss and w.
 
@@ -117,10 +117,10 @@ def logistic_regression(y, tx, initial_w, max_iter, gamma):
         loss: scalar number
     """
     w = initial_w
-    for iter in range(max_iter):
+    for iter in range(max_iters):
         # get loss and update w
         grad = calculate_gradient_negative_log_likelihood(y, tx, w)
-        w -= gamma * grad
+        w = w - gamma * grad
     loss = calculate_negative_log_likelihood(y, tx, w)
     return w, np.float64(loss)
 
