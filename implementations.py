@@ -1,11 +1,11 @@
 # Model methods
 
-# Mean_square_error_gd
 import numpy as np
+
+# Mean_square_error_gd
 
 
 def compute_mse_loss(y, tx, w):
-
     """Compute the mean squared error loss (with the 1/2 factor).
 
     Args:
@@ -21,7 +21,6 @@ def compute_mse_loss(y, tx, w):
 
 
 def compute_mse_gradient(y, tx, w):
-
     """Compute the gradient of the MSE loss.
 
     Args:
@@ -37,13 +36,6 @@ def compute_mse_gradient(y, tx, w):
 
 
 def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
-    w = initial_w
-    for n_iter in range(max_iters):
-        grad = compute_mse_gradient(y, tx, w)
-        w = w - gamma * grad
-    # loss calculée avec le w final
-    loss = compute_mse_loss(y, tx, w)
-    return w, loss
     """Linear regression using gradient descent on the MSE loss.
 
     Args:
@@ -58,14 +50,11 @@ def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
         loss: float, the MSE loss computed with the final w.
     """
     w = initial_w
-    for _ in range(max_iters):
+    for n_iter in range(max_iters):
         grad = compute_mse_gradient(y, tx, w)
         w = w - gamma * grad
     loss = compute_mse_loss(y, tx, w)
     return w, loss
-
-
-import numpy as np
 
 
 def sigmoid(t):
@@ -80,6 +69,7 @@ def sigmoid(t):
     return 1.0 / (1.0 + np.exp(-t))
 
 
+# logistic regression
 def calculate_logistic_loss(y, tx, w):
     """Compute the logistic (negative log-likelihood) loss.
 
