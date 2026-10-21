@@ -47,7 +47,7 @@ def least_squares(y, tx):
     b = tx.T.dot(y)
     w = np.linalg.solve(a, b)
     loss = compute_loss(y, tx, w)
-    return w, np.float(loss)
+    return w, np.float64(loss)
 
 
 # Logistic Regression implementation
@@ -116,4 +116,4 @@ def logistic_regression(y, tx, initial_w, max_iter, gamma):
         grad = calculate_gradient_negative_log_likelihood(y, tx, w)
         w -= gamma * grad
     loss = calculate_negative_log_likelihood(y, tx, w)
-    return w, np.float(loss)
+    return w, np.float64(loss)
