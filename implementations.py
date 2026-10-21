@@ -3,7 +3,9 @@ import numpy as np
 
 
 # Model methods
-# Logistic Regression
+
+
+# Logistic Regression implementation
 def sigmoid(t):
     """apply sigmoid function on t.
 
