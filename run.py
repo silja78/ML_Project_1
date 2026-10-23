@@ -3,7 +3,7 @@
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
-from ml_utils import stratified_split, f1_score, best_threshold
+from ml_utils import *
 from helpers import *
 from Data_preprocessing import *
 from implementations import *
@@ -65,29 +65,14 @@ tx_train_part = np.c_[np.ones(x_train_part_preproc.shape[0]), x_train_part_prepr
 tx_val_part = np.c_[np.ones(x_val_part_preproc.shape[0]), x_val_part_preproc]
 
 #%%
-#Training and choice of the parameters
-'''max_iters = 2000
-for gamma in [0.1, 0.5, 1.0]:
-    w, loss = logistic_regression(
-        y_train_part_01, tx_train_part, np.zeros(tx_train_part.shape[1]), max_iters, gamma
-    )
-    probs_val = sigmoid(tx_val_part @ w)
-    thr, f1 = best_threshold(y_val_part_01, probs_val, np.arange(0.05, 0.55, 0.01))
-    print(f"gamma={gamma}  loss={loss:.4f}  best thr={thr:.2f}  F1={f1:.4f}")
-    '''
-for max_iters in [500, 2000, 5000]:
-    w, loss = logistic_regression(
-        y_train_part_01, tx_train_part, np.zeros(tx_train_part.shape[1]), max_iters, 1.0
-    )
-    probs_val = sigmoid(tx_val_part @ w)
-    thr, f1 = best_threshold(y_val_part_01, probs_val, np.arange(0.05, 0.55, 0.01))
-    print(f"max_iters={max_iters}  loss={loss:.4f}  thr={thr:.2f}  F1={f1:.4f}")
-#%%
+#Training and choice of the parameters for logistic regression
+gammas = np.logspace(-5, 0, 9)  # 0.0001, 0.001, 0.01, 0.1, 1.0
+iters_values = [100, 300, 500, 1000, 2000]
+thresholds = np.arange(0.05, 0.96, 0.01)
+gamma_best, max_iters_best, thr_best = find_best_logistic_params(y_train_part_01, tx_train_part, y_val_part_01, tx_val_part, gammas, iters_values, thresholds)
 
 #%%
 #Final model
-gamma_best = 1   # set to the best value found above
-thr_best = 0.18     # set to the best threshold found above
 
 # Learn preprocessing settings from the training data, then use the same settings for training and testing
 preprocessing_values = fit_preprocessor(x_train, column_types)
@@ -106,7 +91,7 @@ tx_test = np.c_[np.ones(x_test_preproc.shape[0]), x_test_preproc]
 
 # Retrain on all the training data
 w_final, _ = logistic_regression(
-    y_train_01, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma_best
+    y_train_01, tx_train, np.zeros(tx_train.shape[1]), max_iters_best, gamma_best
 )
 
 probs_test = sigmoid(tx_test @ w_final)

@@ -1,4 +1,5 @@
 import numpy as np
+from implementations import *
 
 
 def stratified_split(y, val_ratio=0.2, seed=1):
@@ -41,3 +42,21 @@ def best_threshold(y_true, probs, thresholds):
     scores = [f1_score(y_true, (probs >= t).astype(int)) for t in thresholds]
     best = int(np.argmax(scores))
     return thresholds[best], scores[best]
+
+def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_values, thresholds):
+    best_f1 = -1
+
+    for gamma in gammas:
+        for max_iters in iters_values:
+            w, _ = logistic_regression(y_train, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma)
+
+            probs_val = sigmoid(tx_val @ w)
+            thr, f1 = best_threshold(y_val, probs_val, thresholds)
+
+            if f1 > best_f1:
+                best_f1 = f1
+                gamma_best = gamma
+                max_iters_best = max_iters
+                thr_best = thr
+
+    return gamma_best, max_iters_best, thr_best
