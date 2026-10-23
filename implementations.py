@@ -174,7 +174,7 @@ def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
         w = w - gamma * grad
     # Loss at the final w, without the penalty term
     loss = calculate_negative_log_likelihood(y, tx, w)
-    return w, loss
+    return w, np.float64(loss)
 
 
 # Compute the gradient
