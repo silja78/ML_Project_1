@@ -48,7 +48,7 @@ def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_va
 
     for gamma in gammas:
         for max_iters in iters_values:
-            w, _ = logistic_regression(y_train, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma)
+            w, loss = logistic_regression(y_train, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma)
 
             probs_val = sigmoid(tx_val @ w)
             thr, f1 = best_threshold(y_val, probs_val, thresholds)
@@ -58,5 +58,11 @@ def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_va
                 gamma_best = gamma
                 max_iters_best = max_iters
                 thr_best = thr
+
+            print(
+                f"gamma={gamma:.6g}, iterations={max_iters}, "
+                f"loss={loss:.4f}, threshold={thr:.2f}, "
+                f"F1={f1:.4f}, best F1 so far={best_f1:.4f}"
+            )
 
     return gamma_best, max_iters_best, thr_best
