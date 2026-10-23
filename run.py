@@ -72,6 +72,21 @@ thresholds = np.arange(0.05, 0.96, 0.01)
 gamma_best, max_iters_best, thr_best, results = find_best_logistic_params(y_train_part_01, tx_train_part, y_val_part_01, tx_val_part, gammas, iters_values, thresholds)
 
 #%%
+metric_names = [
+    "Threshold",
+    "Train loss",
+    "Validation loss",
+    "F1",
+    "Accuracy",
+    "Precision",
+    "Recall",
+]
+for k, name in enumerate(metric_names):
+    print(f"\n{name}")
+    print("gamma values:", gammas)
+    print("iterations:  ", iters_values)
+    print(np.round(results[:, :, k], 4))
+#%%
 #Final model
 
 # Learn preprocessing settings from the training data, then use the same settings for training and testing
