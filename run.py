@@ -69,7 +69,7 @@ tx_val_part = np.c_[np.ones(x_val_part_preproc.shape[0]), x_val_part_preproc]
 gammas = np.logspace(-5, 0, 9)  # 0.0001, 0.001, 0.01, 0.1, 1.0
 iters_values = [100, 300, 500, 1000, 2000]
 thresholds = np.arange(0.05, 0.96, 0.01)
-gamma_best, max_iters_best, thr_best = find_best_logistic_params(y_train_part_01, tx_train_part, y_val_part_01, tx_val_part, gammas, iters_values, thresholds)
+gamma_best, max_iters_best, thr_best, results = find_best_logistic_params(y_train_part_01, tx_train_part, y_val_part_01, tx_val_part, gammas, iters_values, thresholds)
 
 #%%
 #Final model

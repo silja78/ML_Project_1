@@ -44,14 +44,37 @@ def best_threshold(y_true, probs, thresholds):
     return thresholds[best], scores[best]
 
 def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_values, thresholds):
+    # save threshold, train_loss, val_loss, f1, accuracy, precision, recall
+    results = np.zeros((len(gammas), len(iters_values), 7))
     best_f1 = -1
 
-    for gamma in gammas:
-        for max_iters in iters_values:
-            w, loss = logistic_regression(y_train, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma)
+    for i,gamma in enumerate(gammas):
+        for j, max_iters in enumerate(iters_values):
+            w, train_loss = logistic_regression(y_train, tx_train, np.zeros(tx_train.shape[1]), max_iters, gamma)
 
             probs_val = sigmoid(tx_val @ w)
             thr, f1 = best_threshold(y_val, probs_val, thresholds)
+
+            y_pred = (probs_val >= thr).astype(int)
+
+            tp = np.sum((y_val == 1) & (y_pred == 1))
+            fp = np.sum((y_val == 0) & (y_pred == 1))
+            fn = np.sum((y_val == 1) & (y_pred == 0))
+
+            accuracy = np.mean(y_pred == y_val)
+            precision = tp / (tp + fp) if tp + fp > 0 else 0.0
+            recall = tp / (tp + fn) if tp + fn > 0 else 0.0
+
+            p = np.clip(probs_val, 1e-15, 1 - 1e-15)
+            val_loss = -np.mean(
+                y_val * np.log(p) + (1 - y_val) * np.log(1 - p)
+            )
+
+            results[i, j, :] = [
+                thr, train_loss, val_loss, f1,
+                accuracy, precision, recall
+            ]
+
 
             if f1 > best_f1:
                 best_f1 = f1
@@ -59,10 +82,4 @@ def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_va
                 max_iters_best = max_iters
                 thr_best = thr
 
-            print(
-                f"gamma={gamma:.6g}, iterations={max_iters}, "
-                f"loss={loss:.4f}, threshold={thr:.2f}, "
-                f"F1={f1:.4f}, best F1 so far={best_f1:.4f}"
-            )
-
-    return gamma_best, max_iters_best, thr_best
+    return gamma_best, max_iters_best, thr_best, results
