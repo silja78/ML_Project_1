@@ -87,6 +87,7 @@ print("Best threshold:", thr_best)
 # Manual correction of best parameters by inspecting results
 gamma_best = 0.2371
 thr_best = 0.21
+max_iters_best = 2000
 
 #%%
 #Final model
