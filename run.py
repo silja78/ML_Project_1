@@ -79,6 +79,15 @@ for k, name in enumerate(metric_names):
 # save_results_csv(results, gammas, iters_values, "logistic_results.csv")
 
 #%%
+print("Best gamma:", gamma_best)
+print("Best max_iters:", max_iters_best)
+print("Best threshold:", thr_best)
+
+#%%
+# Manual correction of best parameters by inspecting results
+gamma_best = 0.2371
+
+#%%
 #Final model
 
 # Learn preprocessing settings from the training data, then use the same settings for training and testing
