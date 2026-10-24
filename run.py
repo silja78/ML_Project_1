@@ -86,6 +86,7 @@ print("Best threshold:", thr_best)
 #%%
 # Manual correction of best parameters by inspecting results
 gamma_best = 0.2371
+thr_best = 0.21
 
 #%%
 #Final model
@@ -116,3 +117,4 @@ print("Fraction predicted positive:", np.mean(y_pred == 1))
 
 #%%
 create_csv_submission(test_ids, y_pred, "submission.csv")
+# %%
