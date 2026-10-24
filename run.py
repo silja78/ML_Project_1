@@ -14,19 +14,8 @@ data_path = 'data'
 x_train, x_test, y_train, train_ids, test_ids, selected_names = load_and_select_data(data_path)
 
 #%%
-# Overview coding for missing or refused values od selected features
-missing_refused_codes = {
-    0: [7, 9],
-    2: [9],
-    3: [9],
-    4: [9],
-    5: [9],
-    8: [9],
-    9: [77,99],
-    10: [9],
-    11: [9],
-    12: [9]
-}
+# Overview coding for missing or refused values of selected features
+missing_refused_codes = find_missing_codes(selected_names, data_path)
 
 # Replace missing values by NaN
 x_train, x_test = replace_missing_codes(
