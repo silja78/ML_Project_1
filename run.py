@@ -35,8 +35,8 @@ x_val_part, y_val_part_01 = x_train[val_idx], y_train_01[val_idx]
 print("Positive rate train:", y_train_part_01.mean(), "val:", y_val_part_01.mean())
 
 #%%
-# All our data at the moment is categorical, adjust here if needed
-column_types = ["categorical"] * x_train.shape[1]
+# Coding for numerical and categorical in feature_selection.csv
+column_types = column_types = get_column_types(selected_names, data_path)
 
 # Learn preprocessing settings from the training data, then use the same settings for training and validation
 preprocessing_values = fit_preprocessor(x_train_part, column_types)
