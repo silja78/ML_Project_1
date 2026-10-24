@@ -76,6 +76,9 @@ for k, name in enumerate(metric_names):
     print("iterations:  ", iters_values)
     print(np.round(results[:, :, k], 4))
 #%%
+# save_results_csv(results, gammas, iters_values, "logistic_results.csv")
+
+#%%
 #Final model
 
 # Learn preprocessing settings from the training data, then use the same settings for training and testing

@@ -1,5 +1,6 @@
 import numpy as np
 from implementations import *
+import csv
 
 
 def stratified_split(y, val_ratio=0.2, seed=1):
@@ -83,3 +84,34 @@ def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_va
                 thr_best = thr
 
     return gamma_best, max_iters_best, thr_best, results
+
+def save_results_csv(results, gammas, iters_values, name):
+    with open(name, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile, delimiter=",")
+        writer.writerow([
+            "gamma",
+            "max_iters",
+            "threshold",
+            "train_loss",
+            "val_loss",
+            "f1",
+            "accuracy",
+            "precision",
+            "recall",
+        ])
+
+        for i, gamma in enumerate(gammas):
+            for j, max_iters in enumerate(iters_values):
+                threshold, train_loss, val_loss, f1, accuracy, precision, recall = results[i, j]
+
+                writer.writerow([
+                    gamma,
+                    max_iters,
+                    threshold,
+                    train_loss,
+                    val_loss,
+                    f1,
+                    accuracy,
+                    precision,
+                    recall,
+                ])
