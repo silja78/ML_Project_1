@@ -1,0 +1,322 @@
+Id;1;ID;;;
+_STATE;0;State FIPS Code;;;
+FMONTH;0;File Month;;;
+IDATE;0;Interview Date;;;
+IMONTH;0;Interview Month;;;
+IDAY;0;Interview Day;;;
+IYEAR;0;Interview Year;;;
+DISPCODE;0;Final Disposition;;c;
+SEQNO;0;Annual Sequence Number;;;
+_PSU;0;Primary Sampling Unit;;;
+CTELENUM;0;Correct telephone number?;;c;
+PVTRESD1;0;Private Residence?;;c;
+COLGHOUS;0;Do you live in college housing?;;c;
+STATERES;0;Resident of State;;c;
+CELLFON3;0;Cellular Telephone;;c;
+LADULT;0;Are you 18 years of age or older?;;c;
+NUMADULT;0;Number of Adults in Household;;n;
+NUMMEN;0;Number of Adult men in Household;;n;
+NUMWOMEN;0;Number of Adult women in Household;;n;
+CTELNUM1;0;Correct Phone Number?;;c;
+CELLFON2;0;Is this a cellular telephone?;;c;
+CADULT;0;Are you 18 years of age or older?;;c;
+PVTRESD2;0;Do you live in a private residence?;;c;
+CCLGHOUS;0;Do you live in college housing?;;c;
+CSTATE;0;Are you a resident of [STATE]?;;c;
+LANDLINE;0;Do you also have a landline telephone?;7, 9;c;
+HHADULT;0;Number of Adults in Household;77, 99;n;
+GENHLTH;0;General Health;7, 9;c;
+PHYSHLTH;0;Number of Days Physical Health Not Good;77, 99;n;88 is actually none, should be set to 0 if you use it
+MENTHLTH;0;Number of Days Mental Health Not Good;77, 99;n;88 is actually none, should be set to 0 if you use it
+POORHLTH;0;Poor Physical or Mental Health;77, 99;n;88 is actually none, should be set to 0 if you use it
+HLTHPLN1;0;Have any health care coverage;7, 9;c;
+PERSDOC2;0;Multiple Health Care Professionals;7, 9;c;
+MEDCOST;0;Could Not See Doctor Because of Cost;7, 9;c;
+CHECKUP1;0;Length of time since last routine checkup;7, 9;c;
+BPHIGH4;0;Ever Told Blood Pressure High;7, 9;c;
+BPMEDS;0;Currently Taking Blood Pressure Medication;7, 9;c;
+BLOODCHO;0;Ever Had Blood Cholesterol Checked;7, 9;c;
+CHOLCHK;0;How Long since Cholesterol Checked;7, 9;c;
+TOLDHI2;0;Ever Told Blood Cholesterol High;7, 9;c;
+CVDSTRK3;0;Ever Diagnosed with a Stroke;7, 9;c;
+ASTHMA3;0;Ever Told Had Asthma;7, 9;c;
+ASTHNOW;0;Still Have Asthma;7, 9;c;
+CHCSCNCR;0;Ever told you had skin cancer?;7, 9;c;
+CHCOCNCR;0;Ever told you had any other types of cancer?;7, 9;c;
+CHCCOPD1;0;Ever told you have chronic obstructive pulmonary disease, emphysema or chronic bronchitis?;7, 9;c;
+HAVARTH3;0;Told Have Arthritis;7, 9;c;
+ADDEPEV2;0;Ever told you had a depressive disorder;7, 9;c;
+CHCKIDNY;0;Ever told you have kidney disease?;7, 9;c;
+DIABETE3;1;Ever told you have diabetes;7, 9;c;
+DIABAGE2;0;Age When Told Diabetic;98, 99;n;
+SEX;1;Respondents Sex;;c;
+MARITAL;0;Marital Status;9;c;
+EDUCA;0;Education Level;9;c;
+RENTHOM1;0;Own or Rent Home;7, 9;c;
+NUMHHOL2;0;Household Telephones;7, 9;c;
+NUMPHON2;0;Residential Phones;7, 9;n;
+CPDEMO1;0;Do you have a cell phone for personal use?;7, 9;c;
+VETERAN3;0;Are You A Veteran;7, 9;c;
+EMPLOY1;0;Employment Status;9;c;
+CHILDREN;0;Number of Children in Household;99;n;88 is None
+INCOME2;0;Income Level;77, 99;c;
+INTERNET;0;Internet use in the past 30 days?;7, 9;c;
+WEIGHT2;0;Reported Weight in Pounds;7777, 9999;n;watch out pounds and kilograms in one variable
+HEIGHT3;0;Reported Height in Feet and Inches;7777, 9999;n;watch out inches and meters in one variable
+PREGNANT;0;Pregnancy Status;7, 9;c;
+QLACTLM2;0;Activity Limitation Due to Health Problems;7, 9;c;
+USEEQUIP;0;Health Problems Requiring Special Equipment;7, 9;c;
+BLIND;0;Blind or Difficulty seeing;7, 9;c;
+DECIDE;0;Difficulty Concentrating or Remembering;7, 9;c;
+DIFFWALK;0;Difficulty Walking or Climbing Stairs;7, 9;c;
+DIFFDRES;0;Difficulty Dressing or Bathing;7, 9;c;
+DIFFALON;0;Difficulty Doing Errands Alone;7, 9;c;
+SMOKE100;0;Smoked at Least 100 Cigarettes;7, 9;c;
+SMOKDAY2;0;Frequency of Days Now Smoking;7, 9;c;
+STOPSMK2;0;Stopped Smoking in past 12 months;7, 9;c;
+LASTSMK2;0;Interval Since Last Smoked;77, 99;c;
+USENOW3;0;Use of Smokeless Tobacco Products;7, 9;c;
+ALCDAY5;0;Days in past 30 had alcoholic beverage;777, 999;c;
+AVEDRNK2;0;Avg alcoholic drinks per day in past 30;77, 99;n;
+DRNK3GE5;0;Binge Drinking;77, 99;n;88 is none
+MAXDRNKS;0;Most drinks on single occasion past 30 days;77, 99;n;
+FRUITJU1;0;How many times did you drink 100 percent PURE fruit juices?;777, 999;;weird, I don't get it - it looks like it is a mix of both
+FRUIT1;0;How many times did you eat fruit?;777, 999;;weird, I don't get it
+FVBEANS;0;How many times did you eat fruit?;777, 999;;weird, I don't get it
+FVGREEN;0;How many times did you eat dark green vegetables?;777, 999;;weird, I don't get it
+FVORANG;0;How many times did you eat orange-colored vegetables?;777, 999;;weird, I don't get it
+VEGETAB1;0;How many times did you eat OTHER vegetables?;777, 999;;weird, I don't get it
+EXERANY2;0;Exercise in Past 30 Days;7, 9;c;
+EXRACT11;0;Type of Physical Activity;77, 99;c;a lot (don't include as one hot vector!)
+EXEROFT1;0;How Many Times Walking, Running, Jogging, or Swimming;777, 999;;weird, I don't get it
+EXERHMM1;0;Minutes or Hours Walking, Running, Jogging, or Swimming;777, 999;;weird, I don't get it
+EXRACT21;0;Other Type of Physical Activity Giving Most Exercise During Past Month;77, 99;c;a lot (don't include as one hot vector!)
+EXEROFT2;0;How Many Times Walking, Running, Jogging, or Swimming;777, 999;;weird, I don't get it
+EXERHMM2;0;Minutes or Hours Walking, Running, Jogging, or Swimming;777, 999;;weird, I don't get it
+STRENGTH;0;How many times did you do physical activities or exercises to STRENGTHEN your muscles?;777, 999;;weird, I don't get it
+LMTJOIN3;0;Limited Because of Joint Symptoms;7, 9;c;
+ARTHDIS2;0;Does Arthritis Affect Whether You Work;7, 9;c;
+ARTHSOCL;0;Social Activities Limited Because of Joint Symptoms;7, 9;c;
+JOINPAIN;0;How Bad Was Joint Pain;77, 99;n;
+SEATBELT;0;How often use seatbelts in car?;7, 9;c;
+FLUSHOT6;0;Adult flu shot/spray past 12 mos;7,9;c;
+FLSHTMY2;0;When did you (adult) receive your most recent seasonal flu shot/spray?;777777, 999999;;weird, I don't get it
+IMFVPLAC;0;Where did you get your last flu shot/vaccine?;77, 99;c;a lot, 11 values
+PNEUVAC3;0;Pneumonia shot ever;7,9;c;
+HIVTST6;0;Ever tested HIV;7,9;c;
+HIVTSTD3;0;Month and Year of Last HIV Test;777777, 999999;;weird, I don't get it, 
+WHRTST10;0;Location of last HIV test;77, 99;c;9 values
+PDIABTST;0;Had a test for high blood sugar or diabetes in the past three years?;7, 9 ;c;
+PREDIAB1;0;Ever been told by a doctor or other health professional that you have pre-diabetes or borderline diabetes?;7,9;c;
+INSULIN;0;Now Taking Insulin;9;c;
+BLDSUGAR;0;How Often Check Blood for Glucose;777, 999;;888 is never, weird, I don't get it
+FEETCHK2;0;How Often Check Feet for Sores or Irritations;777, 999;;888 is never, weird, I don't get it
+DOCTDIAB;0;Times Seen Health Professional for Diabetes;77, 99;n;88 is none
+CHKHEMO3;0;Times Checked for Glycosylated Hemoglobin;77, 99;n;88 is none, 98 is never heard
+FEETCHK;0;Times Feet Check for Sores/irritations;77, 99;n;88 is none
+EYEEXAM;0;Last Eye Exam Where Pupils Were Dilated;7, 9;c;8 is never
+DIABEYE;0;Ever Told Diabetes Has Affected Eyes;7, 9;c;
+DIABEDU;0;Ever Taken Class in Managing Diabetes;7, 9;c;
+CAREGIV1;0;Provided regular care for family or friend;;;don't think we will need these (about caregiving)
+CRGVREL1;0;Relationship Of Person To Whom You Are Giving Care?;;;
+CRGVLNG1;0;How Long Provided Care For Person;;;
+CRGVHRS1;0;How Many Hours Do You Provide Care For Person?;;;
+CRGVPRB1;0;What Is The Major Health Problem, Illness, Disability For Care For Person?;;;
+CRGVPERS;0;Managed personal care;;;
+CRGVHOUS;0;Managed household tasks;;;
+CRGVMST2;0;Which support do you MOST need that you are not getting?;;;
+CRGVEXPT;0;Do you expect to have a relative you will need to provide care for?;;;
+VIDFCLT2;0;Difficulty recognizing friend across street;;;
+VIREDIF3;0;Difficulty reading typed text;;;
+VIPRFVS2;0;Last time visited eye care provider;7,9;c;
+VINOCRE2;0;Reason did not use eye doc past 12 mos;77, 99;c;8 don't think
+VIEYEXM2;0;When last eyexam;;;
+VIINSUR2;0;Eye care health insurance;;;
+VICTRCT4;0;Health care pro said now have cataracts;;;
+VIGLUMA2;0;Health care pro EVER said have glaucoma;;;
+VIMACDG2;0;Health care pro EVER said have macular degeneration;;;
+CIMEMLOS;0;Have you experienced confusion or memory loss that is happening more often or is getting worse?;7, 9;c;
+CDHOUSE;0;Given up day-to-day chores due to confusion or memory loss;7, 9;c;
+CDASSIST;0;Need assistance with day-to_day activities due to confusion or memory loss;7, 9;c;
+CDHELP;0;When you need help with day-to-day activities are you able to get it;7, 9;c;
+CDSOCIAL;0;Does confusion or memory loss interfere with work or social activities;7, 9 ;c;
+CDDISCUS;0;Have you discussed your confusion or memory loss with a health care professional?;7, 9 ;c;
+WTCHSALT;0;Watching Sodium or Salt Intake;7, 9;c;
+LONGWTCH;0;How Long Watching Salt/Sodium Intake;777, 999;;weird, i don't get it
+DRADVISE;0;Doctor Advised Reduced Sodium/Salt Intake;7, 9;c;
+ASTHMAGE;0;Age at Asthma Diagnosis;98, 99;c/n;11-9- numerical, 97 for 10 or younger
+ASATTACK;0;Asthma During Past 12 Months;7;c;
+ASERVIST;0;Emergency Asthma Care During Past 12 Months;98;n;88 is none
+ASDRVIST;0;Urgent Asthma Treatment During Past 12 Months;98;n;88 is none
+ASRCHKUP;0;Routine Asthma Care During Past 12 Months;98, 99;n;88 is none
+ASACTLIM;0;Activities Limited Because of Asthma During Past 12 Months;777, 999;n;888 is none
+ASYMPTOM;0;Asthma Symptoms During Past 30 Days;7, 9;c;8 is none
+ASNOSLEP;0;Sleep Difficulty Because of Asthma During Past 30 Days;7;c;8 is none
+ASTHMED3;0;Days used prescribed preventative asthma med in past 30 days;7, 9;c;8 is never
+ASINHALR;0;Times used asthma inhaler during an attack in past 30 days;7, 9;c;8 is never
+HAREHAB1;0;Outpatient rehab after heart attack hosp stay;7, 9;c;
+STREHAB1;0;Outpatient rehab after hosp stay for stroke;7, 9;c;
+CVDASPRN;0;Take Aspirin Daily or Every Other Day;7, 9;c;
+ASPUNSAF;0;Health Makes Taking Aspirin Unsafe;7, 9;c;
+RLIVPAIN;0;Take Aspirin to Relieve Pain;7, 9;c;
+RDUCHART;0;Take Aspirin to Reduce Chance of Heart Attack;7, 9;c;
+RDUCSTRK;0;Take Aspirin to Reduce Chance of Stroke;7, 9;c;
+ARTTODAY;0;What Can You Do Because of Arthritis or Joint Symptoms;7, 9;c;
+ARTHWGT;0;Dr. Suggest Lose Weight for Arthritis or Joint Symptoms;7, 9 ;c;
+ARTHEXER;0;Dr. Suggest Use of Physical Activity or Exercise for Arthritis or Joint Symptoms;7, 9;c;
+ARTHEDU;0;Ever Taken Class in Managing Arthritis or Joint Symptoms;7, 9;c;
+TETANUS;0;Received Tetanus Shot Since 2005?;7, 9;c;
+HPVADVC2;0;Have you ever had the HPV vaccination?;7, 9 ;c;Only some people asked
+HPVADSHT;0;How many HPV shots did you receive?;77, 99;n;but it's weird, 1-2 number of shots, 3 all
+SHINGLE2;0;Have you ever had the shingles or zoster vaccine?;7, 9 ;c;
+HADMAM;0;Have You Ever Had a Mammogram;7, 9;c;
+HOWLONG;0;How Long since Last Mammogram;7, 9;c;
+HADPAP2;0;Ever Had a Pap Test;7, 9 ;c;
+LASTPAP2;0;How Long Since Last Pap Test;7, 9;c;
+HPVTEST;0;Have you ever had an HPV test?;7, 9;c;
+HPLSTTST;0;How long since your last HPV test?;7, 9 ;c;
+HADHYST2;0;Had Hysterectomy;7, 9 ;c;
+PROFEXAM;0;Ever Had Breast Physical Exam by Doctor;7, 9 ;c;
+LENGEXAM;0;How Long since Last Breast Physical Exam;7, 9;c;
+BLDSTOOL;0;Ever Had Blood Stool Test Using Home Kit;7, 9;c;
+LSTBLDS3;0;Time Since Last Blood Stool Test;7, 9;c;
+HADSIGM3;0;Ever Had Sigmoidoscopy/Colonoscopy;7, 9;c;
+HADSGCO1;0;Was your last test a sigmoidoscopy or colonoscopy?;7, 9 ;c;
+LASTSIG3;0;Time Since Last Sigmoidoscopy/Colonoscopy;7, 9 ;c;
+PCPSAAD2;0;Has a health professional EVER talked with you about the advantages of the PSA test?;7, 9 ;c;
+PCPSADI1;0;Has a health professional EVER talked with you about the disadvantages of the PSA test?;7, 9 ;c;
+PCPSARE1;0;Has a doctor EVER recommended that you have a PSA test?;7, 9 ;c;
+PSATEST1;0;Ever Had PSA Test;7, 9 ;c;
+PSATIME;0;Time Since Last PSA Test;7, 9 ;c;
+PCPSARS1;0;What was the MAIN reason you had this PSA test?;7, 9 ;c;
+PCPSADE1;0;Why was PSA test done?;9;c;
+PCDMDECN;0;Who made the decision with you to have PSA test?;7, 9 ;c;
+SCNTMNY1;0;Times Past 12 Months Worried/Stressed About Having Enough Money To Pay Your Rent/Mortgage?;7, 9 ;c;8 not applicable
+SCNTMEL1;0;Times Past 12 Months Worried/Stressed About Having Enough Money To Buy Nutritious Meals?;7, 9;c;8 not applicable
+SCNTPAID;0;How Are You Generally Paid For The Work You Do;7, 9 ;c;
+SCNTWRK1;0;How Many Hours Per Week Do You Work;97, 99;n;98 is 0
+SCNTLPAD;0;How Were You Generally Paid For The Work You Did;7, 9;c;
+SCNTLWK1;0;How Many Hours Per Week Did You Work;97, 99;c;98 is 0
+SXORIENT;0;Sexual orientation or gender identity;;;
+TRNSGNDR;0;Do you consider yourself to be transgender?;;;
+RCSGENDR;0;Gender of child;;;
+RCSRLTN2;0;Relationship to child;;;
+CASTHDX2;0;Hlth pro ever said child has asthma;;;
+CASTHNO2;0;Child still have asthma?;;;
+EMTSUPRT;0;How often get emotional support needed;;;
+LSATISFY;0;Satisfaction with life;;;
+ADPLEASR;0;Days had little pleasure doing things;;;
+ADDOWN;0;Days felt down, depressed or hopeless;;;
+ADSLEEP;0;Days had trouble with sleep;;;
+ADENERGY;0;Days were tired or had little energy;;;
+ADEAT1;0;Days ate too little or too much;;;
+ADFAIL;0;Days felt like failure or let family down;;;
+ADTHINK;0;Days had trouble concentrating;;;
+ADMOVE;0;Days talked to move slower or faster than usual;;;
+MISTMNT;0;Days talked to move slower or faster than usual;;;
+ADANXEV;0;Ever told you had an anxiety disorder;7,9;c;
+QSTVER;0;Questionnaire Version Identifier;;;
+QSTLANG;0;Language identifier;;;
+MSCODE;0;Metropolitan Status Code;;c;
+_STSTR;0;Sample Design Stratification Variable;;;
+_STRWT;0;Stratum weight;;;
+_RAWRAKE;0;Raw weighting factor used in raking;;;
+_WT2RAKE;0;Design weight use in raking;;;
+_CHISPNC;0;Child Hispanic, Latino/a, or Spanish origin calculated variable;;;
+_CRACE1;0;Child Non-Hispanic Race including Multiracial;;;
+_CPRACE;0;Preferred Child Race Categories;;;
+_CLLCPWT;0;Final child weight: Land-line and Cell-Phone data;;;
+_DUALUSE;0;Dual Phone Use Categories;;;
+_DUALCOR;0;Dual Phone Use Correction Factor;;;
+_LLCPWT;0;Final weight: Land-line and cell-phone data;;;
+_RFHLTH;1;Adults with good or better health;9;c;
+_HCVU651;1;Respondents aged 18-64 with health care coverage;9;c;
+_RFHYPE5;1;High Blood Pressure Calculated Variable;9;c;
+_CHOLCHK;0;Cholesterol Checked Calculated Variable;9;c;
+_RFCHOL;1;High Cholesterol Calculated Variable;9;c;
+_LTASTH1;0;Lifetime Asthma Calculated Variable;9;c;
+_CASTHM1;0;Current Asthma Calculated Variable;9;c;
+_ASTHMS1;0;Computed Asthma Status;9;c;
+_DRDXAR1;0;Respondents diagnosed with arthritis;;c;
+_PRACE1;0;Computed Preferred Race;77, 99;c;
+_MRACE1;0;Calculated non-Hispanic Race including multiracial;77, 99;c;
+_HISPANC;0;Hispanic, Latino/a, or Spanish origin calculated variable;9;c;
+_RACE;0;Computed Race-Ethnicity grouping;7, 9;c;
+_RACEG21;0;Create Computed Non-Hispanic Whites/All Others Race Categories Race/Ethnic Group Codes Used In Post-Stratification Variable;9;c;
+_RACEGR3;0;Computed Five level race/ethnicity category;9;c;
+_RACE_G1;0;Computed race groups used for internet prevalence tables;;c;
+_AGEG5YR;0;Reported age in five-year age categories calculated variable;14;c;
+_AGE65YR;0;Reported age in two age groups calculated variable;3;c;
+_AGE80;0;Imputed Age value collapsed above 80;;n;don't get what collapsed above 80 means
+_AGE_G;1;Imputed age in six groups;;c;
+HTIN4;0;Computed Height in Inches;;n;
+HTM4;0;Computed Height in Meters;;n;
+WTKG3;0;Computed Weight in Kilograms;99999;n;
+_BMI5;0;Computed body mass index;;n;
+_BMI5CAT;1;Computed body mass index categories;;n;
+_RFBMI5;0;Overweight or obese calculated variable;9;c;
+_CHLDCNT;0;Computed number of children in household;9;c;
+_EDUCAG;1;Computed level of education completed categories;9;c;
+_INCOMG;1;Computed income categories;9;c;
+_SMOKER3;1;Computed Smoking Status;9;c;
+_RFSMOK3;0;Current Smoking Calculated Variable;9;c;
+DRNKANY5;0;Drink any alcoholic beverages in past 30 days;7, 9;c;
+DROCDY3_;0;Computed drink-occasions-per-day;900;n;
+_RFBING5;0;Binge Drinking Calculated Variable;9;c;
+_DRNKWEK;0;Computed number of drinks of alcohol beverages per week;99900;n;
+_RFDRHV5;1;Heavy Alcohol Consumption Calculated Variable;9;c;
+FTJUDA1_;0;Computed Fruit Juice intake in times per day;;n;
+FRUTDA1_;0;Computed Fruit intake in times per day;;n;
+BEANDAY_;0;Computed Bean intake in times per day;;n;
+GRENDAY_;0;Computed Dark Green Vegetable intake in times per day;;n;
+ORNGDAY_;0;Computed Orange-Colored Vegetable intake in times per day;;n;
+VEGEDA1_;0;Computed Other Vegetable intake in times per day;;n;
+_MISFRTN;0;The number of missing fruit responses;;n;
+_MISVEGN;0;The number of missing vegetable responses;;n;
+_FRTRESP;0;Missing any fruit responses;;c;
+_VEGRESP;0;Missing any vegetable responses;;c;
+_FRUTSUM;0;Total fruits consumed per day;;n;
+_VEGESUM;0;Total vegetables consumed per day;;n;
+_FRTLT1;0;Consume Fruit 1 or more times per day;9;c;
+_VEGLT1;0;Consume Vegetables 1 or more times per day;9;c;
+_FRT16;0;Reported consuming Fruit >16 per day;;c;
+_VEG23;0;Reported consuming Vegetables >23 per day;;c;
+_FRUITEX;0;Fruit Exclusion from analyses;;c;
+_VEGETEX;0;Vegetable Exclusion from analyses;;c;
+_TOTINDA;0;Leisure Time Physical Activity Calculated Variable;9;c;
+METVL11_;0;Activity MET Value for First Activity;;n;what is MET value ?
+METVL21_;0;Activity MET Value for Second Activity;;n;
+MAXVO2_;0;Estimated Age-Gender Specific Maximum Oxygen Consumption;99900;n;
+FC60_;0;Estimated Functional Capacity;99900;n;
+ACTIN11_;0;Estimated Activity Intensity for First Activity;;c;
+ACTIN21_;0;Estimated Activity Intensity for Second Activity;;c;
+PADUR1_;0;Minutes of First Activity;;n;
+PADUR2_;0;Minutes of Second Activity;;n;
+PAFREQ1_;0;Physical Activity Frequency per Week for First Activity;99000;n;
+PAFREQ2_;0;Physical Activity Frequency per Week for Second Activity;99000;n;
+_MINAC11;0;Minutes of Physical Activity per week for First Activity;;n;
+_MINAC21;0;Minutes of Physical Activity per week for Second Activity;;n;
+STRFREQ_;0;Strength Activity Frequency per Week;99000;n;
+PAMISS1_;0;Missing Physical Activity Data;9;c;
+PAMIN11_;0;Minutes of Physical Activity per week for First Activity;;n;
+PAMIN21_;0;Minutes of Physical Activity per week for Second Activity;;n;
+PA1MIN_;0;Minutes of total Physical Activity per week;;n;
+PAVIG11_;0;Minutes of Vigorous Physical Activity per week for First Activity;;n;
+PAVIG21_;0;Minutes of Vigorous Physical Activity per week for Second Activity;;n;
+PA1VIGM_;0;Minutes of total Vigorous Physical Activity per week;;n;
+_PACAT1;1;Physical Activity Categories;9;c;
+_PAINDX1;0;Physical Activity Index;9;c;
+_PA150R2;0;150 Minute Physical Activity Calculated Variable;9;c;
+_PA300R2;0;300 Minute Physical Activity Calculated Variable;9;c;
+_PA30021;0;300 Minute Physical Activity 2-Level Calculated Variable;9;c;
+_PASTRNG;0;Muscle Strengthening Recommendation;9;c;
+_PAREC1;0;Aerobic and Strengthening Guideline;9;c;
+_PASTAE1;0;Aerobic and Strengthening (2-level);9;c;
+_LMTACT1;0;Limited usual activities;9;c;
+_LMTWRK1;0;Limited work activities;9;c;
+_LMTSCL1;0;Limited social activities;9;c;
+_RFSEAT2;0;Always or Nearly Always Wear Seat Belts;9;c;
+_RFSEAT3;0;Always Wear Seat Belts;9;c;
+_FLSHOT6;0;Flu Shot Calculated Variable;9;c;
+_PNEUMO2;0;Pneumonia Vaccination Calculated Variable;9;c;
+_AIDTST3;0;Ever been tested for HIV calculated variable;9;c;
