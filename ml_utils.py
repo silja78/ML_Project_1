@@ -223,9 +223,15 @@ def save_results_csv(results, gammas, iters_values, name):
 
         for i, gamma in enumerate(gammas):
             for j, max_iters in enumerate(iters_values):
-                threshold, train_loss, val_loss, f1, accuracy, precision, recall = (
-                    results[i, j]
-                )
+                (
+                    threshold,
+                    train_loss,
+                    val_loss,
+                    f1,
+                    accuracy,
+                    precision,
+                    recall,
+                ) = results[i, j]
 
                 writer.writerow(
                     [
