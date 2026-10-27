@@ -1,8 +1,8 @@
-
 import numpy as np
 from implementations import *
 import time
 import csv
+
 
 def stratified_split(y, val_ratio=0.2, seed=1):
     """Split indices into train/validation, keeping the class proportions.
@@ -65,7 +65,9 @@ def best_threshold(y_true, probs, thresholds):
     return thresholds[best], scores[best]
 
 
-def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_values, thresholds):
+def find_best_logistic_params(
+    y_train, tx_train, y_val, tx_val, gammas, iters_values, thresholds
+):
     """Search the best learning rate and number of iterations for logistic regression.
 
     For each learning rate, the model is trained once up to the largest number of
@@ -127,12 +129,20 @@ def find_best_logistic_params(y_train, tx_train, y_val, tx_val, gammas, iters_va
             p = np.clip(probs_val, 1e-15, 1 - 1e-15)
             val_loss = -np.mean(y_val * np.log(p) + (1 - y_val) * np.log(1 - p))
 
-            results[i, j, :] = [thr, train_loss, val_loss, f1, accuracy, precision, recall]
+            results[i, j, :] = [
+                thr,
+                train_loss,
+                val_loss,
+                f1,
+                accuracy,
+                precision,
+                recall,
+            ]
 
             print(
                 f"gamma={gamma:.4f}, iters={max_iters}, F1={f1:.4f}, "
                 f"val_loss={val_loss:.4f}, {time.time() - t0:.0f}s",
-                flush=True
+                flush=True,
             )
 
             if f1 > best_f1:
@@ -174,7 +184,7 @@ def logistic_regression_checkpoints(y, tx, initial_w, checkpoints, gamma):
             loss = -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))
 
             if not np.isfinite(loss) or loss > prev_loss + 1e-6:
-                break  
+                break
 
             saved[it] = (w.copy(), loss)
             prev_loss = loss
@@ -197,33 +207,39 @@ def save_results_csv(results, gammas, iters_values, name):
     """
     with open(name, "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
-        writer.writerow([
-            "gamma",
-            "max_iters",
-            "threshold",
-            "train_loss",
-            "val_loss",
-            "f1",
-            "accuracy",
-            "precision",
-            "recall",
-        ])
+        writer.writerow(
+            [
+                "gamma",
+                "max_iters",
+                "threshold",
+                "train_loss",
+                "val_loss",
+                "f1",
+                "accuracy",
+                "precision",
+                "recall",
+            ]
+        )
 
         for i, gamma in enumerate(gammas):
             for j, max_iters in enumerate(iters_values):
-                threshold, train_loss, val_loss, f1, accuracy, precision, recall = results[i, j]
+                threshold, train_loss, val_loss, f1, accuracy, precision, recall = (
+                    results[i, j]
+                )
 
-                writer.writerow([
-                    gamma,
-                    max_iters,
-                    threshold,
-                    train_loss,
-                    val_loss,
-                    f1,
-                    accuracy,
-                    precision,
-                    recall,
-                ])
+                writer.writerow(
+                    [
+                        gamma,
+                        max_iters,
+                        threshold,
+                        train_loss,
+                        val_loss,
+                        f1,
+                        accuracy,
+                        precision,
+                        recall,
+                    ]
+                )
 
 
 def predict_all_negative(n_samples):

@@ -1,11 +1,9 @@
-
 # Imports
 import csv
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 from helpers import *
-
 
 
 # Load the data for the selected features
@@ -49,15 +47,12 @@ def load_and_select_data(data_path, feature_path, feature_selection_file_name):
         header = next(csv.reader(file))
 
     feature_names = header[1:]
-    selected_names = [
-        name for name, keep in zip(feature_names, keep_mask)
-        if keep == 1
-    ]
+    selected_names = [name for name, keep in zip(feature_names, keep_mask) if keep == 1]
 
     return x_train, x_test, y_train, train_ids, test_ids, selected_names
 
 
-def find_missing_codes(selected_names, feature_path,feature_selection_file_name):
+def find_missing_codes(selected_names, feature_path, feature_selection_file_name):
     """find the answer codes meaning "missing" or "refused" for each selected feature.
 
     Args:
@@ -70,9 +65,7 @@ def find_missing_codes(selected_names, feature_path,feature_selection_file_name)
     """
     missing_refused_codes = {}
 
-    selected_indices = {
-        name: index for index, name in enumerate(selected_names)
-    }
+    selected_indices = {name: index for index, name in enumerate(selected_names)}
 
     with open(
         os.path.join(feature_path, feature_selection_file_name),
@@ -91,11 +84,7 @@ def find_missing_codes(selected_names, feature_path,feature_selection_file_name)
             if not cell:
                 continue
 
-            codes = [
-                int(code.strip())
-                for code in cell.split(",")
-                if code.strip()
-            ]
+            codes = [int(code.strip()) for code in cell.split(",") if code.strip()]
 
             index = selected_indices[feature_name]
             missing_refused_codes[index] = codes
@@ -116,18 +105,14 @@ def replace_missing_codes(x_train, x_test, missing_codes):
         x_test: shape=(N_test, D), with NaN instead of the codes
     """
     for col_index, codes in missing_codes.items():
-        x_train[
-            np.isin(x_train[:, col_index], codes), col_index
-        ] = np.nan
+        x_train[np.isin(x_train[:, col_index], codes), col_index] = np.nan
 
-        x_test[
-            np.isin(x_test[:, col_index], codes), col_index
-        ] = np.nan
+        x_test[np.isin(x_test[:, col_index], codes), col_index] = np.nan
 
     return x_train, x_test
 
 
-def get_column_types(selected_names, feature_path,feature_selection_file_name):
+def get_column_types(selected_names, feature_path, feature_selection_file_name):
     """get the type of each selected feature from the feature selection file.
 
     Args:
@@ -228,12 +213,10 @@ def transform_data(x, column_types, preprocessing_values):
 
         if column_type == "categorical":
             known_categories = categories[j]
-            encoded = np.zeros(
-                (x.shape[0], len(known_categories) + 1)
-            )
+            encoded = np.zeros((x.shape[0], len(known_categories) + 1))
 
             for k, category in enumerate(known_categories):
-                encoded[:, k] = (column == category)
+                encoded[:, k] = column == category
 
             # Last column indicates a missing value.
             encoded[:, -1] = np.isnan(column)

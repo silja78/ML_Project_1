@@ -254,5 +254,3 @@ def ridge_regression(y, tx, lambda_):
     w = np.linalg.solve(A, b)
     loss = compute_mse_loss(y, tx, w)
     return w, loss
-
-
