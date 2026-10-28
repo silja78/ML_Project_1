@@ -48,7 +48,7 @@ iteration numbers.
 - With these best parameters, we then trained our final model. For this, we did the preprocessing steps again (this time for the whole train dataset).
 - Finally, we saved the estimations of our model as a csv file.
 
-All data preprocessing fucntions can be found in Data_preprocessing.py and all training functions can be found in implementations.py and ml_utils.py. Loading the whole dataset and writing the submission csv file can be done with functions from helpers.py. To run the whole pipeline execute run.py.
+All data preprocessing functions can be found in Data_preprocessing.py and all training functions can be found in implementations.py and ml_utils.py. Loading the whole dataset and writing the submission csv file can be done with functions from helpers.py. To run the whole pipeline execute run.py.
 
 We used two models, which differs only by the number of features selected,a simple model with few features and a complex one with more features. In the feature_selection.csv, we marked with 1 the rows of the dataset that we wanted to include and with 0 the ones that we want to exclude. We also wrote down the missing/refused/I Don't know Codebook codes to later delete those values and marked whether the column is categorical or numerical for the columns we wanted to include. All this information in feature_selection.csv gets imported in the code to perform the data preprocessing.
 
