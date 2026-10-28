@@ -33,7 +33,7 @@ All the steps of our pipeline can be found in this repository.
 - We converted our prediction values -1,1 to 0,1 to use the implementations of the course.
 - Then, we splitted the provided train datasets into a train (80%) and validation part (20%).
 - After that, we calculated median, minimum and maximum values for numerical features and evaluated the categories of categorical features of the train part.
-- With the derived values from the train part in the step before, we transformed our train and validation part :  we transformed our numerical data by using min-pax scaling and replacing the NaN by the median of the feature. We transformed our categorical data by using one-hot vector encoding.
+- With the derived values from the train part in the step before, we transformed our train and validation part :  we transformed our numerical data by using min-max scaling and replacing the NaN by the median of the feature. We transformed our categorical data by using one-hot vector encoding.
 - We added a bias column to both train and validation part.
 
 **Best parameter search**
